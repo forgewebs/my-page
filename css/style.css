@@ -1,0 +1,372 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  -webkit-font-smoothing: antialiased;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  /* ESSENCIAL */
+  padding: 40px 20px;
+  /* respiro no celular */
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+a:visited {
+  color: white;
+}
+
+a:hover {
+  color: white;
+}
+
+a:active {
+  color: white;
+}
+
+img {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  margin-bottom: 50px;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 500px;
+  text-align: center;
+  margin: 0;
+}
+
+.buttons {
+  display: flex;
+  gap: 50px;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+}
+
+h1 {
+  font-size: 32px;
+  margin-bottom: 5px;
+}
+
+h2 {
+  font-size: 26px;
+  margin-bottom: 50px;
+}
+
+h3 {
+  font-size: 20px;
+  margin-bottom: 50px;
+}
+
+.buttons a {
+  transition: 0.3s;
+}
+
+#whatsapp:hover {
+  color: rgb(8, 197, 1);
+}
+
+#instagram:hover {
+  color: rgb(255, 46, 116)
+}
+
+#github:hover {
+  color: blue;
+}
+
+.buttons a:hover {
+  transform: scale(1.2);
+}
+
+/* Botão de menu (3 pontinhos) */
+.menu-toggle {
+  position: fixed;
+  top: 30px;
+  left: 30px;
+  font-size: 16px;
+  padding: 8px;
+  cursor: pointer;
+  z-index: 1001;
+  transition: 0.3s;
+}
+
+.menu-toggle:hover {
+  transform: scale(1.2);
+}
+
+/* Sidebar escondida */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -250px;
+  /* escondida fora da tela */
+  width: 250px;
+  height: 100vh;
+  background-color: #111;
+  padding-top: 100px;
+  transition: 0.4s ease;
+  z-index: 1000;
+}
+
+/* Quando ativa */
+.sidebar.active {
+  left: 0;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li {
+  margin: 30px 0;
+  text-align: center;
+}
+
+.sidebar a {
+  font-size: 20px;
+  transition: 0.3s;
+}
+
+.sidebar a:hover {
+  color: gray;
+}
+
+.footer-minimal {
+  width: 100%;
+  text-align: center;
+  padding: 30px 10px;
+  margin-top: 120px;
+  font-size: 14px;
+  color: #666;
+  border-top: 1px solid #222;
+}
+
+/* ===== Página Sobre ===== */
+
+.sobre-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+  padding: 120px 40px 40px 40px;
+  box-sizing: border-box;
+  flex-wrap: wrap;
+}
+
+.sobre-texto {
+  flex: 1;
+  max-width: 600px;
+}
+
+.sobre-texto h1 {
+  font-size: 40px;
+  margin-bottom: 30px;
+}
+
+.sobre-texto p {
+  color: #aaa;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+
+.sobre-imagem img {
+  width: 320px;
+  border-radius: 20px;
+}
+
+.skills {
+  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skills span {
+  background-color: #111;
+  border: 1px solid #333;
+  padding: 8px 14px;
+  border-radius: 20px;
+  font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  .sobre-container {
+    padding: 100px 20px 40px 20px;
+    text-align: center;
+  }
+
+  .sobre-imagem img {
+    width: 220px;
+    margin-top: 30px;
+  }
+}
+
+/* ===== Página Projetos ===== */
+
+.projetos-container {
+  min-height: 100vh;
+  padding: 120px 40px 40px 40px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.projetos-container h1 {
+  font-size: 40px;
+  margin-bottom: 60px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+}
+
+.card {
+  background-color: #111;
+  border: 1px solid #222;
+  border-radius: 15px;
+  overflow: hidden;
+  transition: 0.4s;
+  display: flex;
+  flex-direction: column;
+}
+
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.card h3 {
+  margin: 20px 0 10px 0;
+}
+
+.card p {
+  color: #aaa;
+  padding: 0 20px;
+  flex: 1;
+}
+
+.card a {
+  margin: 20px;
+  padding: 10px;
+  border: 1px solid #333;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.card a:hover {
+  background-color: #222;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  border-color: #444;
+}
+
+/* ===== Página Contato ===== */
+
+.contato-container {
+  min-height: 100vh;
+  padding: 120px 40px 40px 40px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.contato-container h1 {
+  font-size: 40px;
+  margin-bottom: 60px;
+}
+
+.contato-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+}
+
+.contato-card {
+  background-color: #111;
+  border: 1px solid #222;
+  border-radius: 15px;
+  padding: 30px;
+  transition: 0.4s;
+}
+
+.contato-card:hover {
+  transform: translateY(-8px);
+  border-color: #444;
+}
+
+.contato-card h3 {
+  margin-bottom: 15px;
+}
+
+.contato-card p {
+  color: #aaa;
+  margin-bottom: 25px;
+  line-height: 1.6;
+}
+
+.contato-icons a {
+  font-size: 24px;
+  margin: 0 10px;
+  color: #aaa;
+  transition: 0.3s;
+}
+
+.contato-icons a:hover {
+  transform: scale(1.2);
+}
+
+/* Email */
+.contato-icons a:hover .bi-envelope {
+  color: #9c1408;
+}
+
+/* WhatsApp */
+.contato-icons a:hover .bi-whatsapp {
+  color: #25D366;
+}
+
+/* GitHub */
+.contato-icons a:hover .bi-github {
+  color: #7a2cf0;
+}
+
+.contato-icons a:hover .bi-instagram {
+  color: #ff0ba1d7;
+}
