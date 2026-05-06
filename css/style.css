@@ -370,3 +370,7 @@ h3 {
 .contato-icons a:hover .bi-instagram {
   color: #ff0ba1d7;
 }
+
+.contato-icons a:hover .bi-link-45deg {
+  color: #f7f200d7;
+}
